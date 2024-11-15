@@ -2,7 +2,6 @@ package atlantafx.sampler.base.service;
 
 import atlantafx.sampler.base.configJDBC.dao.JDBCConnect;
 import atlantafx.sampler.base.util.PasswordUtils;
-
 import jakarta.mail.*;
 import jakarta.mail.internet.*;
 import java.sql.Connection;
