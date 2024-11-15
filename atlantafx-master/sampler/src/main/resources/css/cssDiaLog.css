@@ -1,0 +1,56 @@
+/* style.css */
+
+.dialog-pane {
+  -fx-background-color: #f9f9f9;
+  -fx-border-color: #cfd8dc;
+  -fx-border-width: 2;
+  -fx-border-radius: 8;
+  -fx-background-radius: 8;
+}
+
+.dialog-pane .content.label {
+  -fx-font-size: 14px;
+  -fx-text-fill: #333333;
+  -fx-padding: 10px;
+}
+
+.dialog-pane .header-panel {
+  -fx-background-color: #1976d2;
+  -fx-background-radius: 8 8 0 0;
+  -fx-padding: 10px;
+}
+
+.dialog-pane .header-panel .label {
+  -fx-font-size: 16px;
+  -fx-font-weight: bold;
+  -fx-text-fill: white;
+}
+
+.dialog-pane .button-bar .button {
+  -fx-background-color: #1976d2;
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+  -fx-background-radius: 4;
+  -fx-padding: 5 15;
+  -fx-cursor: hand;
+}
+
+.dialog-pane .button-bar .button:hover {
+  -fx-background-color: #1565c0;
+}
+
+.dialog-pane .button-bar .button:pressed {
+  -fx-background-color: #0d47a1;
+}
+
+.error-alert {
+  -fx-background-color: #ffebee;
+  -fx-border-color: #e53935;
+  -fx-border-width: 2;
+  -fx-text-fill: #d32f2f;
+}
+
+.error-alert .label {
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+}

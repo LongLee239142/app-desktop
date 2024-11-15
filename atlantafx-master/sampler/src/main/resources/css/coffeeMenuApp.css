@@ -1,0 +1,291 @@
+/*!* styles.css *!*/
+/*.image-view {*/
+/*  -fx-alignment: center; !* Canh giữa nội dung *!*/
+/*  -fx-padding: 10; !* Thêm khoảng đệm *!*/
+/*}*/
+
+/*.coffee-item {*/
+/*  -fx-alignment: center; !* Canh giữa các item *!*/
+/*}*/
+/*.root {*/
+/*  -fx-background-color: #D2B49A;*/
+/*}*/
+
+/*.text-field {*/
+/*  -fx-font-size: 14px;*/
+/*  -fx-padding: 5px;*/
+/*  -fx-background-radius: 5px;*/
+/*  -fx-border-color: #A05A4D;*/
+/*  -fx-border-radius: 5px;*/
+/*  -fx-border-width: 1px;*/
+/*}*/
+
+/*.combo-box {*/
+/*  -fx-background-color: #A05A4D;*/
+/*  -fx-font-size: 14px;*/
+/*  -fx-text-fill: white;*/
+/*}*/
+
+
+/*.button {*/
+/*  -fx-background-color: #A05A4D;*/
+/*-fx-text-fill: white;*/
+/*  -fx-font-size: 14px;*/
+/*  -fx-background-radius: 5px;*/
+/*  -fx-padding: 5px 10px;*/
+/*}*/
+
+
+/*.product-box {*/
+/*  -fx-border-color: #DDC5B2;*/
+/*  -fx-border-radius: 8px;*/
+/*  -fx-background-color: #F9F9F9;*/
+/*  -fx-background-radius: 8px;*/
+/*}*/
+
+/*.product-box:hover {*/
+/*  -fx-background-color: #F0F0F0;*/
+/*}*/
+
+
+/*.label {*/
+/*  -fx-font-family: Arial;*/
+/*  -fx-text-fill: #3E2F2F;*/
+/*}*/
+
+/*.label-bold {*/
+/*  -fx-font-weight: bold;*/
+/*}*/
+
+/*.label-price {*/
+/*  -fx-text-fill: #777;*/
+/*}*/
+
+
+/*.scroll-pane {*/
+/*  -fx-background-color: transparent;*/
+/*}*/
+
+/*.scroll-pane .viewport {*/
+/*  -fx-background-color: transparent;*/
+/*}*/
+
+/*.scroll-pane .scroll-bar {*/
+/*  -fx-background-color: transparent;*/
+/*}*/
+
+/*.scroll-bar:vertical .thumb {*/
+/*  -fx-background-color: #A05A4D;*/
+/*-fx-background-radius: 5px;*/
+/*}*/
+
+/*.scroll-bar:vertical .track {*/
+/*  -fx-background-color: #DDC5B2;*/
+/*-fx-background-radius: 5px;*/
+/*}*/
+/* !*coffeeMenuApp.css*!*/
+
+/*!* Root style *!*/
+/*!*.root {*!*/
+/*!*  -fx-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*!*/
+/*!*  -fx-background-color: #f8f9fa;*!*/
+/*!*}*!*/
+
+/*!*!* Text field style *!*!*/
+/*!*.text-field {*!*/
+/*!*  -fx-border-color: #ced4da;*!*/
+/*!*  -fx-border-radius: 4px;*!*/
+/*!*  -fx-padding: 5px 10px;*!*/
+/*!*  -fx-background-color: #fff;*!*/
+/*!*  -fx-background-insets: 0;*!*/
+/*!*}*!*/
+
+/*!*!* Button style *!*!*/
+/*!*.button {*!*/
+/*!*  -fx-background-color: #007bff;*!*/
+/*!*  -fx-text-fill: #fff;*!*/
+/*!*  -fx-padding: 5px 10px;*!*/
+/*!*  -fx-border-radius: 4px;*!*/
+/*!*  -fx-cursor: hand;*!*/
+/*!*}*!*/
+
+/*!*.button:hover {*!*/
+/*!*  -fx-background-color: #0056b3;*!*/
+/*!*}*!*/
+
+/*!*!* ComboBox style *!*!*/
+/*!*.combo-box {*!*/
+/*!*  -fx-border-color: #ced4da;*!*/
+/*!*  -fx-border-radius: 4px;*!*/
+/*!*  -fx-padding: 5px 10px;*!*/
+/*!*  -fx-background-color: #fff;*!*/
+/*!*}*!*/
+
+/*!*!* Label styles *!*!*/
+/*!*.label-bold {*!*/
+/*!*  -fx-font-weight: bold;*!*/
+/*!*}*!*/
+
+/*!*.label-price {*!*/
+/*!*  -fx-text-fill: #28a745;*!*/
+/*!*}*!*/
+
+/*!*!* Product box style *!*!*/
+/*!*.product-box {*!*/
+/*!*  -fx-background-color: #fff;*!*/
+/*!*  -fx-border-color: #ced4da;*!*/
+/*!*  -fx-border-radius: 4px;*!*/
+/*!*  -fx-padding: 10px;*!*/
+/*!*}*!*/
+/*!* CSS file (styles.css) *!*/
+/*.product-box {*/
+/*  -fx-background-color: #f9f9f9;*/
+/*  -fx-padding: 10px;*/
+/*  -fx-border-radius: 10px;*/
+/*  -fx-background-radius: 10px;*/
+/*  -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);*/
+/*}*/
+
+/*.label-bold {*/
+/*  -fx-font-weight: bold;*/
+/*}*/
+
+/*.label-price {*/
+/*  -fx-text-fill: #3E2F2F;*/
+/*}*/
+
+/*.button-box {*/
+/*  spacing: 10px;  !* Adds space between buttons *!*/
+/*}*/
+
+/*.button {*/
+/*  -fx-background-color: #A05A4D;*/
+/*  -fx-text-fill: white;*/
+/*  -fx-font-size: 14px;*/
+/*  -fx-padding: 5px 15px;*/
+/*  -fx-border-radius: 5px;*/
+/*  -fx-background-radius: 5px;*/
+/*}*/
+
+/*.button:hover {*/
+/*  -fx-background-color: #A05A4D;*/
+/*}*/
+
+
+
+
+
+/* coffeeMenuApp.css */
+
+/* Root styles: Background with soft gradient */
+.root {
+  -fx-background-color: linear-gradient(to bottom right, #ffffff, #f2f2f2);
+}
+
+/* Styling for the search bar */
+.text-field {
+  -fx-padding: 8px;
+  -fx-border-radius: 8px;
+  -fx-background-radius: 8px;
+  -fx-background-color: #ffffff;
+  -fx-border-color: #dddddd;
+  -fx-font-size: 16px;
+  -fx-font-family: 'Roboto', sans-serif;
+  -fx-prompt-text-fill: #a0a0a0;
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.2, 0, 2);
+}
+
+/* Styling for the ComboBox */
+.combo-box {
+  -fx-padding: 6px;
+  -fx-border-radius: 8px;
+  -fx-background-radius: 8px;
+  -fx-background-color: #ffffff;
+  -fx-border-color: #dddddd;
+  -fx-font-family: 'Roboto', sans-serif;
+  -fx-font-size: 16px;
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.2, 0, 2);
+}
+
+/* Button styling */
+.button {
+  -fx-background-color: #5c67f2;
+  -fx-text-fill: white;
+  -fx-font-size: 16px;
+  -fx-padding: 10px 20px;
+  -fx-border-radius: 10px;
+  -fx-background-radius: 10px;
+  -fx-cursor: hand;
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0.3, 0, 2);
+}
+
+.button:hover {
+  -fx-background-color: #4b56d1;
+}
+
+/* GridPane styling for product display */
+.grid-pane {
+  -fx-padding: 15px;
+  -fx-background-color: #ffffff;
+  -fx-border-color: #e0e0e0;
+  -fx-background-radius: 10px;
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 15, 0.1, 0, 2);
+}
+
+/* Product cards (each item in the grid) */
+.product-card {
+  -fx-background-color: #f9f9f9;
+  -fx-padding: 15px;
+  -fx-border-radius: 10px;
+  -fx-background-radius: 10px;
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0.2, 0, 2);
+  -fx-transition: all 0.3s ease-in-out;
+}
+
+.product-card:hover {
+  /*-fx-transform: scale(1.02);*/
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 15, 0.3, 0, 5);
+}
+
+/* Styling for labels and text inside the cards */
+.label {
+  -fx-font-family: 'Roboto', sans-serif;
+  -fx-font-size: 14px;
+  -fx-text-fill: #333333;
+}
+
+/* Smooth scroll for the ScrollPane */
+.scroll-pane {
+  -fx-vbar-policy: always;
+  -fx-background-color: transparent;
+  -fx-control-inner-background: transparent;
+  -fx-padding: 10px;
+}
+/* Main layout styling */
+.root {
+  -fx-background-color: #f5f5f5;
+}
+
+.text-field {
+  -fx-padding: 6px;
+  -fx-border-color: #cfd8dc;
+  -fx-border-radius: 5;
+  -fx-background-radius: 5;
+  -fx-background-color: #ffffff;
+}
+
+.combo-box {
+  -fx-padding: 6px;
+  -fx-background-color: #ffffff;
+  -fx-border-radius: 5;
+  -fx-background-radius: 5;
+}
+
+.add-button {
+  -fx-background-color: #4b56d1;
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+  -fx-background-radius: 5;
+  -fx-padding: 8 15;
+}
+

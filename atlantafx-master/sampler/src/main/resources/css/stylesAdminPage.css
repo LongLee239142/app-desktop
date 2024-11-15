@@ -1,0 +1,89 @@
+/* Main layout background */
+.root {
+  -fx-background-color: #f4d1c5;
+  -fx-padding: 10;
+}
+
+/* Header buttons (Thêm, Sửa, Xóa) */
+.button {
+  -fx-background-color: #fff;
+  -fx-text-fill: #5e372b;
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+  -fx-padding: 10 15;
+  -fx-background-radius: 10;
+  -fx-border-color: #5e372b;
+  -fx-border-width: 1px;
+  -fx-border-radius: 10;
+}
+
+.button:hover {
+  -fx-background-color: #f4b09d;
+}
+
+/* Table Header */
+.table-view .column-header {
+  -fx-background-color: #af887b;
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+  -fx-font-size: 14px;
+  -fx-padding: 10;
+}
+
+/* Table rows */
+.table-row-cell {
+  -fx-background-color: #e9dbd6;
+  -fx-border-color: #ddd;
+  -fx-border-width: 1px;
+  -fx-padding: 10;
+}
+
+.table-row-cell:selected {
+  -fx-background-color: #9b857a;
+  -fx-text-fill: white;
+}
+
+/* Text alignment and styles for table content */
+.table-cell {
+  -fx-alignment: center-left;
+  -fx-font-size: 13px;
+}
+
+/* Page navigation controls */
+.pagination .control-buttons-box {
+  -fx-background-color: #af887b;
+  -fx-text-fill: white;
+}
+
+.pagination .control-buttons-box .button {
+  -fx-background-color: transparent;
+  -fx-text-fill: white;
+  -fx-font-size: 12px;
+}
+
+.pagination .control-buttons-box .button:hover {
+  -fx-background-color: #7f5d54;
+}
+
+/* Top bar for categories (Thực đơn, Nhân viên, Báo cáo, Khuyến mãi) */
+.menu-bar {
+  -fx-background-color: #844d3b;
+}
+
+.menu-bar .menu {
+  -fx-text-fill: white;
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+}
+
+.menu-bar .menu:hover {
+  -fx-background-color: #5e372b;
+}
+
+/* Admin Info Label */
+.admin-info {
+  -fx-text-fill: #5e372b;
+  -fx-font-size: 12px;
+  -fx-padding: 5;
+  -fx-font-weight: bold;
+}

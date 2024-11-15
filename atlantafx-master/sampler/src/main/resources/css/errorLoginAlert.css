@@ -1,0 +1,44 @@
+/*.custom-alert {*/
+/*  -fx-background-color: #5b2f28;  !* Brown background *!*/
+/*  -fx-padding: 20px;*/
+/*  -fx-border-radius: 10px;*/
+/*  -fx-background-radius: 10px;*/
+/*}*/
+
+/*.error-message {*/
+/*  -fx-text-fill: white;  !* White text *!*/
+/*  -fx-font-size: 18px;   !* Font size *!*/
+/*  -fx-font-family: "Arial";*/
+/*  -fx-alignment: center;*/
+/*  -fx-text-alignment: center;*/
+/*}*/
+/* Style for the entire alert dialog */
+.custom-alert {
+  -fx-background-color: #ffffff; /* White background */
+  -fx-padding: 20px;
+  -fx-spacing: 15px; /* Space between image and message */
+  -fx-border-radius: 10px;
+  -fx-background-radius: 10px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0, 0, 4); /* Subtle shadow */
+}
+
+/* Style for the error message text */
+.error-message {
+  -fx-font-size: 16px;
+  -fx-text-fill: #e53935; /* Red color for error text */
+  -fx-font-weight: bold;
+  -fx-text-alignment: center;
+  -fx-wrap-text: true; /* Allow the text to wrap inside the label */
+}
+
+/* Style for the error icon (optional) */
+.image-view {
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 10, 0, 0, 4); /* Subtle shadow for image */
+  -fx-border-radius: 10px;
+}
+
+/* Scene background color */
+.root {
+  -fx-background-color: transparent; /* Transparent background for the scene */
+}
+

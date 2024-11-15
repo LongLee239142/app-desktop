@@ -1,0 +1,53 @@
+/* loginpage.css */
+.image-pane {
+  background-color: #2d2d2d;
+  -fx-alignment: center;
+}
+
+.login-form {
+  -fx-padding: 40px;
+  -fx-spacing: 20px;
+  -fx-alignment: center;
+  -fx-background-color: #ffffff;
+}
+
+.login-form .text-field, .login-form .password-field {
+  -fx-font-size: 14px;
+  -fx-padding: 10px;
+  -fx-background-radius: 8px;
+  -fx-border-radius: 8px;
+  -fx-border-color: #ccc;
+  -fx-border-width: 1px;
+  -fx-prompt-text-fill: #888;
+}
+
+.login-form .button {
+  -fx-background-color: #3b5998;
+  -fx-text-fill: #ffffff;
+  -fx-font-weight: bold;
+  -fx-background-radius: 8px;
+  -fx-padding: 10px 20px;
+  -fx-cursor: hand;
+}
+
+.login-form .button:hover {
+  -fx-background-color: #314e8c;
+}
+
+.login-form .text-field, .login-form .password-field {
+  -fx-max-width: 250px;
+}
+
+.login-form .button {
+  -fx-max-width: 250px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+  .image-pane {
+    -fx-pref-width: 0;
+  }
+  .login-form {
+    -fx-padding: 20px;
+  }
+}

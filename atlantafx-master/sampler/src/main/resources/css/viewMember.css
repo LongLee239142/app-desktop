@@ -1,0 +1,25 @@
+.root {
+  -fx-font-family: 'Arial';
+}
+
+.label {
+  -fx-font-weight: bold;
+  -fx-text-fill: #5D4037; /* Brown shade */
+}
+
+.text-field, .date-picker {
+  -fx-background-color: #FFFFFF;
+  -fx-border-color: #BCAAA4; /* Light brown border */
+  -fx-border-radius: 4px;
+  -fx-padding: 5px;
+}
+
+.button {
+  -fx-background-color: #8D6E63; /* Brown shade */
+  -fx-text-fill: #FFFFFF;
+  -fx-border-radius: 4px;
+}
+
+.table-view {
+  -fx-border-color: #5D4037; /* Brown shade for table border */
+}

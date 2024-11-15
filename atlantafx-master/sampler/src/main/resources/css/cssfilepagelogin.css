@@ -1,0 +1,44 @@
+
+.root {
+  -fx-background-color: #d1b7a1; /* Background similar to beige */
+  -fx-padding: 20px;
+  -fx-alignment: center;
+}
+
+/* Styling for the text fields */
+.text-field, .password-field {
+  -fx-background-color: white;
+  -fx-background-radius: 15;
+  -fx-border-color: #52342e;
+  -fx-border-radius: 15;
+  -fx-padding: 10;
+  -fx-font-size: 14px;
+  -fx-text-fill: #52342e; /* Brown text color */
+  -fx-pref-width: 250px; /* Set preferred width */
+}
+
+
+/* Styling for the radio buttons */
+.combo-box {
+  -fx-background-color: #f5e6d1;
+  -fx-border-color: #52342e;
+  -fx-border-width: 1px;
+  -fx-padding: 10;
+  -fx-font-size: 14px;
+  -fx-text-fill: #52342e;
+}
+
+/* Style for the login button */
+.button {
+  -fx-background-color: #52342e; /* Dark brown button */
+  -fx-text-fill: white; /* White text */
+  -fx-font-size: 18px;
+  -fx-padding: 10px 20px;
+  -fx-background-radius: 15;
+}
+
+/* Style for HBox that contains radio buttons */
+.hbox {
+  -fx-spacing: 15px;
+  -fx-alignment: center;
+}

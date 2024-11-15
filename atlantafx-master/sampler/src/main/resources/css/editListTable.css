@@ -1,0 +1,180 @@
+/* General styles for the layout */
+.vbox {
+  -fx-background-color: #f5f7fa; /* Light background color for a clean look */
+  -fx-padding: 20px;
+  -fx-spacing: 15px;
+  -fx-alignment: center;
+}
+
+/* Title label styling */
+.label-title {
+  -fx-font-size: 20px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #2c3e50; /* Dark blue-gray text color */
+  -fx-padding: 10px 0;
+  -fx-alignment: center;
+}
+
+/* Search field styling */
+.text-field {
+  -fx-prompt-text-fill: #bdc3c7; /* Light gray placeholder */
+  -fx-font-size: 14px;
+  -fx-background-color: #ffffff;
+  -fx-border-color: #bdc3c7; /* Light gray border */
+  -fx-border-radius: 6px;
+  -fx-background-radius: 6px;
+  -fx-padding: 8px;
+  -fx-pref-width: 300px; /* Adjust width to fit design */
+}
+
+.text-field:focused {
+  -fx-border-color: #3498db; /* Blue border when focused */
+}
+
+/* GridPane styling for table buttons */
+.grid-pane {
+  -fx-hgap: 20px;
+  -fx-vgap: 20px;
+  -fx-padding: 10px;
+  -fx-alignment: center;
+}
+
+/* Table button styling */
+.button-grid {
+  -fx-background-color: #3498db; /* Primary blue color for table buttons */
+  -fx-text-fill: white;
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+  -fx-padding: 15px;
+  -fx-background-radius: 10px;
+  -fx-pref-width: 120px;
+  -fx-pref-height: 60px;
+  -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2); /* Subtle shadow for depth */
+}
+
+.button-grid:hover {
+  -fx-background-color: #2980b9; /* Darker shade on hover */
+}
+
+/* Pagination button styling */
+.button {
+  -fx-background-color: #1abc9c; /* Green for navigation buttons */
+  -fx-text-fill: white;
+  -fx-font-size: 12px;
+  -fx-font-weight: bold;
+  -fx-padding: 8px 16px;
+  -fx-background-radius: 6px;
+  -fx-border-radius: 6px;
+  -fx-cursor: hand;
+}
+
+.button:hover {
+  -fx-background-color: #16a085; /* Darker shade of green on hover */
+}
+
+.pagination {
+  -fx-spacing: 15px;
+  -fx-padding: 10px 0;
+  -fx-alignment: center;
+}
+
+/* Edit and Delete button styling */
+.edit-button, .delete-button {
+  -fx-font-size: 12px;
+  -fx-font-weight: bold;
+  -fx-padding: 6px 10px;
+  -fx-border-radius: 6px;
+  -fx-background-radius: 6px;
+}
+
+.edit-button {
+  -fx-background-color: #2ecc71; /* Green for edit */
+  -fx-text-fill: white;
+}
+
+.edit-button:hover {
+  -fx-background-color: #27ae60;
+}
+
+.delete-button {
+  -fx-background-color: #e74c3c; /* Red for delete */
+  -fx-text-fill: white;
+}
+
+.delete-button:hover {
+  -fx-background-color: #c0392b;
+}
+
+/* Status box styling */
+.status-box {
+  -fx-background-color: #ecf0f1; /* Light gray background */
+  -fx-padding: 10px;
+  -fx-spacing: 10px;
+  -fx-border-radius: 8px;
+  -fx-background-radius: 8px;
+  -fx-alignment: center;
+}
+
+.status-box .label {
+  -fx-font-size: 14px;
+  -fx-padding: 5px 10px;
+  -fx-background-radius: 8px;
+  -fx-text-fill: white;
+}
+
+.status-box .reserved-label {
+  -fx-background-color: #28a745; /* Green */
+}
+
+.status-box .unavailable-label {
+  -fx-background-color: #ff9800; /* Orange */
+}
+
+.status-box .available-label {
+  -fx-background-color: #dcdcdc; /* Gray */
+  -fx-text-fill: #000; /* Black text */
+}
+/* Styling for the top controls containing the New Table button and search */
+.top-controls {
+  -fx-spacing: 10px;
+  -fx-padding: 10px 0;
+}
+
+/* Style for the "New Table" button */
+/* Style for the "New Table" button */
+.new-table-button {
+  -fx-background-color: #28a745; /* Green color */
+  -fx-text-fill: white;
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+  -fx-padding: 10px 20px;
+  -fx-background-radius: 8px;
+  -fx-border-radius: 8px;
+  -fx-cursor: hand;
+  -fx-margin: 20px; /* Adds space from the edges */
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0.0, 0, 1); /* Shadow effect */
+}
+
+.new-table-button:hover {
+  -fx-background-color: #218838; /* Darker green on hover */
+}
+
+
+/* editListTable.css */
+
+/* Styles for the top controls */
+.top-controls {
+  -fx-padding: 10px;
+  -fx-spacing: 10px; /* Spacing between buttons and the search field */
+  -fx-alignment: center; /* Center alignment for the HBox */
+}
+
+/* Style for the search field */
+.text-field {
+  -fx-padding: 10px;
+  -fx-background-color: #f8f9fa; /* Light gray background */
+  -fx-border-color: #ced4da; /* Border color */
+  -fx-border-radius: 5px;
+  -fx-focus-color: #007bff; /* Color on focus */
+}
+

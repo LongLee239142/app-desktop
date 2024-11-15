@@ -1,0 +1,53 @@
+/* Style for the dialog layout */
+.dialog-layout {
+  padding: 20px; /* Add padding around the dialog */
+  background-color: #f9f9f9; /* Light background color */
+  border-radius: 8px; /* Rounded corners */
+  -fx-border-color: #c0c0c0; /* Border color */
+  -fx-border-width: 1px; /* Border width */
+  -fx-border-radius: 8px; /* Rounded border corners */
+}
+
+/* Style for the labels in the dialog */
+.dialog-layout .label {
+  -fx-font-size: 14px; /* Font size for labels */
+  -fx-text-fill: #333; /* Dark text color */
+}
+
+/* Style for text fields in the dialog */
+.text-field {
+  -fx-padding: 8px; /* Padding inside the text field */
+  -fx-background-color: #ffffff; /* White background for text fields */
+  -fx-border-color: #ccc; /* Light gray border */
+  -fx-border-radius: 5px; /* Rounded corners for text field */
+  -fx-font-size: 14px; /* Font size */
+}
+
+/* Change the text field border color when focused */
+.text-field:focused {
+  -fx-border-color: #007BFF; /* Blue border on focus */
+}
+
+/* Style for buttons in the dialog */
+.button {
+  -fx-background-color: #007BFF; /* Button background color */
+  -fx-text-fill: white; /* Button text color */
+  -fx-padding: 10px 15px; /* Padding inside buttons */
+  -fx-font-size: 14px; /* Font size */
+  -fx-background-radius: 5px; /* Rounded corners */
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1); /* Shadow effect */
+}
+
+/* Change button color on hover */
+.button:hover {
+  -fx-background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Style for cancel button */
+.button.cancel {
+  -fx-background-color: #dc3545; /* Red background for cancel button */
+}
+
+.button.cancel:hover {
+  -fx-background-color: #c82333; /* Darker red on hover */
+}

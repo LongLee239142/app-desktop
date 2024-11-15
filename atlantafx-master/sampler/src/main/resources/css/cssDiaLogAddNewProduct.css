@@ -1,0 +1,53 @@
+/* GridPane styling */
+.dialog-grid-pane {
+  -fx-padding: 20px;
+  -fx-hgap: 15px;
+  -fx-vgap: 15px;
+  -fx-background-color: #f9f9f9;
+  -fx-border-color: #e0e0e0;
+  -fx-border-width: 2;
+  -fx-border-radius: 8;
+  -fx-background-radius: 8;
+}
+
+/* Label styling */
+.dialog-label {
+  -fx-font-size: 14px;
+  -fx-text-fill: #333333;
+  -fx-font-weight: bold;
+}
+
+/* TextField styling */
+.dialog-text-field {
+  -fx-padding: 6px;
+  -fx-border-color: #cfd8dc;
+  -fx-border-radius: 5;
+  -fx-background-radius: 5;
+  -fx-background-color: #ffffff;
+}
+
+/* Button styling */
+.dialog-button {
+  -fx-background-color: #1976d2;
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+  -fx-background-radius: 5;
+  -fx-padding: 8 15;
+}
+
+.dialog-button:hover {
+  -fx-background-color: #1565c0;
+}
+
+.dialog-button:pressed {
+  -fx-background-color: #0d47a1;
+}
+
+/* ImageView styling */
+.dialog-image-view {
+  -fx-border-color: #cfd8dc;
+  -fx-border-width: 2;
+  -fx-border-radius: 10;
+  -fx-background-radius: 10;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 5, 0, 2, 2);
+}

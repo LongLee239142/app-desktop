@@ -1,0 +1,55 @@
+/* Main layout styling */
+.root {
+  -fx-background-color: #d1b7a1;
+  -fx-padding: 20;
+  -fx-spacing: 20;
+  -fx-alignment: center;
+}
+
+/* Styling for the TextFields */
+.text-field, .password-field {
+  -fx-background-color: white;
+  -fx-background-radius: 15;
+  -fx-border-color: #52342e;
+  -fx-border-radius: 15;
+  -fx-padding: 10;
+  -fx-font-size: 14px;
+  -fx-text-fill: #52342e; /* Brown text color */
+  -fx-pref-width: 250px; /* Set preferred width */
+}
+
+
+/* ComboBox styling */
+.combo-box {
+  -fx-background-color: #f5e6d1;
+  -fx-border-color: #52342e;
+  -fx-border-width: 1px;
+  -fx-padding: 10;
+  -fx-font-size: 14px;
+  -fx-text-fill: #52342e;
+}
+
+/* Label styling */
+.label {
+  -fx-font-size: 14px;
+  -fx-text-fill: #52342e;
+}
+
+/* Register button styling */
+.button {
+  -fx-background-color: #52342e; /* Dark brown button */
+  -fx-text-fill: white; /* White text */
+  -fx-font-size: 18px;
+  -fx-padding: 10px 20px;
+  -fx-background-radius: 15;
+}
+
+.button:hover {
+  -fx-background-color: #3e2a21;
+}
+
+/* Result message styling */
+.text {
+  -fx-font-size: 12px;
+  -fx-text-fill: #d9534f; /* For error message in red */
+}
