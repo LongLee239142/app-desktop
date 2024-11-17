@@ -7,7 +7,7 @@ public class BillDetail {
     private int quantity;
     private double price;
     private int voucherId;
-
+    private String productName;
     public BillDetail( int billId, Integer productId, int quantity, double price, int voucherId) {
 
         this.billId = billId;
@@ -18,6 +18,14 @@ public class BillDetail {
     }
 
     public BillDetail() {
+    }
+
+    public BillDetail(int id, int billId, String productName, int quantity, double price) {
+        this.id = id;
+        this.billId = billId;
+        this.productName = productName;
+        this.quantity = quantity;
+        this.price = price;
     }
 
     public Integer getVoucherId() {

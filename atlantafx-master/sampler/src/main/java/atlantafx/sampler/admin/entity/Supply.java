@@ -9,7 +9,7 @@ public class Supply {
     private String suppliersId; // ID for the supplier
     private String supplierName; // Name of the supplier
     private double totalValue;   // Total value calculated as price * quantity
-
+    private int id;
     // Constructor with all attributes
     public Supply(String supplyCode, String name, String unit, double price, double quantity, String suppliersId, String supplierName) {
         this.supplyCode = supplyCode;
@@ -107,5 +107,9 @@ public class Supply {
                 ", supplierName='" + supplierName + '\'' +
                 ", totalValue=" + totalValue +
                 '}';
+    }
+
+    public int getId() {
+        return id;
     }
 }

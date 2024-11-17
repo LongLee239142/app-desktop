@@ -5,15 +5,10 @@ import atlantafx.sampler.admin.page.OutlinePage;
 import atlantafx.sampler.base.configJDBC.dao.JDBCConnect;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Pagination;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.*;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Button;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.sql.*;
 
@@ -26,7 +21,6 @@ public final class InventoryPage extends OutlinePage {
 
     private ComboBox<String> supplierFilter;
     private TextField searchField;
-    private Button resetButton;
 
     @Override
     public String getName() {
@@ -37,7 +31,7 @@ public final class InventoryPage extends OutlinePage {
         super();
         createTable();
         loadSuppliers();
-        loadData();
+        loadData(0);  // Load initial data for page 0
     }
 
     private void createTable() {
@@ -46,12 +40,13 @@ public final class InventoryPage extends OutlinePage {
         setupPagination();
         createFilterControls();
 
-        VBox layout = new VBox(supplierFilter, searchField, resetButton, pagination);
+        VBox layout = new VBox(supplierFilter, searchField, pagination);
         layout.getChildren().addAll(table);
         getChildren().addAll(layout);
     }
 
     private void initializeTableColumns() {
+        // Add columns for displaying supply data
         table.getColumns().addAll(
                 createTableColumn("Supply Code", "supplyCode"),
                 createTableColumn("Name", "name"),
@@ -59,7 +54,8 @@ public final class InventoryPage extends OutlinePage {
                 createTableColumn("Price", "price"),
                 createTableColumn("Quantity", "quantity"),
                 createTableColumn("Supplier Name", "supplierName"),
-                createTableColumn("Total Value", "totalValue")
+                createTableColumn("Total Value", "totalValue"),
+                createActionColumn() // Add the update button column
         );
     }
 
@@ -67,6 +63,32 @@ public final class InventoryPage extends OutlinePage {
         TableColumn<Supply, String> column = new TableColumn<>(title);
         column.setCellValueFactory(new PropertyValueFactory<>(property));
         return column;
+    }
+
+    private TableColumn<Supply, Void> createActionColumn() {
+        TableColumn<Supply, Void> actionColumn = new TableColumn<>("Action");
+
+        // Create a cell factory to create buttons for each row
+        actionColumn.setCellFactory(param -> new TableCell<Supply, Void>() {
+            private final Button updateButton = new Button("Update Quantity");
+
+            {
+                // Set button action
+                updateButton.setOnAction(event -> updateQuantity(getTableRow().getItem()));
+            }
+
+            @Override
+            public void updateItem(Void item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty) {
+                    setGraphic(null);
+                } else {
+                    setGraphic(updateButton);
+                }
+            }
+        });
+
+        return actionColumn;
     }
 
     private void setupPagination() {
@@ -82,9 +104,6 @@ public final class InventoryPage extends OutlinePage {
         searchField = new TextField();
         searchField.setPromptText("Search by name");
         searchField.textProperty().addListener((observable, oldValue, newValue) -> updateTable());
-
-        resetButton = new Button("Reset Filters");
-        resetButton.setOnAction(e -> resetFilters());
     }
 
     private void loadSuppliers() {
@@ -102,9 +121,13 @@ public final class InventoryPage extends OutlinePage {
     }
 
     private StackPane createPage(int pageIndex) {
+        loadData(pageIndex);  // Load data for the current page index
+        return new StackPane(table);
+    }
+
+    private void loadData(int pageIndex) {
         ObservableList<Supply> data = loadDataForPage(pageIndex);
         table.setItems(data);
-        return new StackPane(table);
     }
 
     private ObservableList<Supply> loadDataForPage(int pageIndex) {
@@ -112,7 +135,7 @@ public final class InventoryPage extends OutlinePage {
         Connection connection = JDBCConnect.getJDBCConnection();
 
         StringBuilder query = new StringBuilder("SELECT s.id, s.supply_code, s.name, s.unit, s.price, s.quantity, su.name AS supplier_name " +
-                "FROM supplies s JOIN suppliers su ON s.suppliers_id = su.suppliers_id "); // Update here
+                "FROM supplies s JOIN suppliers su ON s.suppliers_id = su.suppliers_id ");
 
         String whereClause = "";
         if (supplierFilter.getValue() != null && !supplierFilter.getValue().isEmpty()) {
@@ -148,63 +171,79 @@ public final class InventoryPage extends OutlinePage {
         return supplies;
     }
 
-
-    private String buildWhereClause() {
-        StringBuilder whereClause = new StringBuilder();
-        boolean hasSupplierFilter = supplierFilter.getValue() != null && !supplierFilter.getValue().isEmpty();
-        boolean hasSearchText = !searchField.getText().isEmpty();
-
-        if (hasSupplierFilter) {
-            whereClause.append("WHERE su.name = ? ");
-        }
-
-        if (hasSearchText) {
-            if (hasSupplierFilter) {
-                whereClause.append("AND ");
-            } else {
-                whereClause.append("WHERE ");
-            }
-            whereClause.append("s.name LIKE ? ");
-        }
-        return whereClause.toString();
-    }
-
-    private void setQueryParameters(PreparedStatement statement, int pageIndex) throws SQLException {
-        int paramIndex = 1;
-        if (supplierFilter.getValue() != null && !supplierFilter.getValue().isEmpty()) {
-            statement.setString(paramIndex++, supplierFilter.getValue());
-        }
-
-        if (!searchField.getText().isEmpty()) {
-            statement.setString(paramIndex++, "%" + searchField.getText() + "%");
-        }
-
-        statement.setInt(paramIndex, pageIndex * 10);
-    }
-
-    private void loadData() {
-        String countQuery = "SELECT COUNT(*) AS total FROM supplies";
-        try (Connection connection = JDBCConnect.getJDBCConnection();
-             PreparedStatement statement = connection.prepareStatement(countQuery);
-             ResultSet resultSet = statement.executeQuery()) {
-
-            if (resultSet.next()) {
-                int totalRecords = resultSet.getInt("total");
-                pagination.setPageCount((int) Math.ceil((double) totalRecords / 10));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
     private void updateTable() {
-        loadData();
-        createPage(0); // Reset to the first page after filtering
+        // Reload the data with the current filter and search criteria
+        pagination.setCurrentPageIndex(0);  // Reset to the first page
+        loadData(0);
     }
 
-    private void resetFilters() {
-        supplierFilter.setValue(null);
-        searchField.clear();
-        updateTable(); // Refresh the table with all data
+    private void updateQuantity(Supply selectedSupply) {
+        // If no supply is selected, show an error dialog
+        if (selectedSupply == null) {
+            showErrorDialog("No product selected", "Please select a product to update the quantity.");
+            return;
+        }
+
+        // Show a dialog to enter the new quantity
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Update Quantity");
+        dialog.setHeaderText("Enter the new quantity for " + selectedSupply.getName());
+        dialog.setContentText("New Quantity:");
+
+        // Set the default value to the current quantity of the supply
+        dialog.getEditor().setText(String.valueOf(selectedSupply.getQuantity()));
+
+        // Handle when the user presses OK
+        dialog.showAndWait().ifPresent(newQuantity -> {
+            try {
+                // Validate if the entered quantity is a valid number (non-negative integer)
+                int quantity = Integer.parseInt(newQuantity);
+                if (quantity < 0) {
+                    showErrorDialog("Invalid Quantity", "Quantity cannot be negative.");
+                    return;
+                }
+
+                // Update the quantity in the database
+                String updateQuery = "UPDATE supplies SET quantity = ? WHERE id = ?";
+                try (Connection connection = JDBCConnect.getJDBCConnection();
+                     PreparedStatement statement = connection.prepareStatement(updateQuery)) {
+                    statement.setInt(1, quantity);
+                    statement.setInt(2, selectedSupply.getId());
+
+                    int rowsUpdated = statement.executeUpdate();
+                    if (rowsUpdated > 0) {
+                        // If update is successful, refresh the table
+                        selectedSupply.setQuantity(quantity); // Update the quantity in the table view
+                        table.refresh(); // Refresh the table to show updated quantity
+                        showInfoDialog("Quantity Updated", "The quantity has been updated successfully.");
+                    } else {
+                        showErrorDialog("Update Failed", "Failed to update the quantity.");
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    showErrorDialog("Database Error", "An error occurred while updating the quantity.");
+                }
+            } catch (NumberFormatException e) {
+                showErrorDialog("Invalid Input", "Please enter a valid number for the quantity.");
+            }
+        });
+    }
+
+    // Method to show error dialogs
+    private void showErrorDialog(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
+
+    // Method to show success information dialogs
+    private void showInfoDialog(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
     }
 }

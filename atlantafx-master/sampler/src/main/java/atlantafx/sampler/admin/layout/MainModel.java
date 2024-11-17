@@ -74,9 +74,9 @@ public class MainModel {
         var orders = NavTree.Item.group("Đơn hàng", new FontIcon(Material2OutlinedMZ.SHOPPING_CART));
         orders.getChildren().setAll(
                 NAV_TREE.get(RevenuePage.class),
-                NAV_TREE.get(OrderListPage.class),
-                NAV_TREE.get(VoucherManager.class),
-                NAV_TREE.get(DiscountManager.class)
+                NAV_TREE.get(OrderListPage.class)
+//                NAV_TREE.get(VoucherManager.class),
+//                NAV_TREE.get(DiscountManager.class)
 
         );
 
@@ -104,7 +104,7 @@ public class MainModel {
 // Salary (Lương) group
         var salary = NavTree.Item.group("Lương", new FontIcon(Material2OutlinedMZ.PAYMENTS));
         salary.getChildren().setAll(
-                NAV_TREE.get(SalaryListPage.class),           // Salary List (Danh sách lương)
+//                NAV_TREE.get(SalaryListPage.class),           // Salary List (Danh sách lương)
                 NAV_TREE.get(ChangeSalaryPage.class)          // Change Salary (Thay đổi lương)
         );
 
